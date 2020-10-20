@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<configuracion>
+ <ipserver>192.168.100.15</ipserver>
+ <username>postgres</username>
+ <password>12345</password>
+</configuracion>

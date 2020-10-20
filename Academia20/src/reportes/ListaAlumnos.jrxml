@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt_alumnos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7c24f13b-be25-4bc5-b287-ba2ebbdccf95">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="d1f53f8e-4d3a-4cf8-9247-803807bc0ee4"/>
+	<queryString language="SQL">
+		<![CDATA[Select * from alumnos]]>
+	</queryString>
+	<field name="idalumno" class="java.lang.Integer"/>
+	<field name="apellido_alumno" class="java.lang.String"/>
+	<field name="cedula_alumno" class="java.lang.String"/>
+	<field name="celular1" class="java.lang.String"/>
+	<field name="celular2" class="java.lang.String"/>
+	<field name="mail" class="java.lang.String"/>
+	<field name="nombre_alumno" class="java.lang.String"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="fechanac" class="java.sql.Date"/>
+	<field name="activo" class="java.lang.Integer"/>
+	<variable name="vtotal" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="412" y="59" width="143" height="20" uuid="e2b319c9-e401-4771-96cf-1b80450611f2"/>
+				<textElement textAlignment="Justified">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="88" y="24" width="100" height="20" uuid="e8e201db-d2ca-40c5-8d20-4db4641d06e8"/>
+				<text><![CDATA[Elizabeth Vinader]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="88" y="7" width="100" height="20" uuid="1684f0e3-21de-4876-a2c2-ddfe7926ea4c"/>
+				<text><![CDATA[Academia de Danza]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="22" width="194" height="30" uuid="54411859-4da9-4e0c-b221-16a6884de58f"/>
+				<textElement textAlignment="Justified">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Listado de Alumnos]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="76" width="555" height="3" forecolor="#999999" uuid="b630c017-c33e-47b7-90dd-74605e594532"/>
+			</line>
+			<image>
+				<reportElement x="2" y="-1" width="86" height="77" uuid="83037509-621f-45f8-86df-7b83dddc95b0"/>
+				<imageExpression><![CDATA["src\\imagenes\\Logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="113" y="0" width="161" height="20" uuid="0f6a4dcf-6f7d-4746-947a-a248944b6691"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[    Nombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="0" width="100" height="20" uuid="a2acd4a4-df0c-4761-9b85-e33c3eecf3b6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[    Celular]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="404" y="0" width="123" height="20" uuid="95f475bd-20a6-40dc-a70e-5dcb4b8659e0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[    Mail]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="0" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="ef71764a-99fe-4ded-9794-90c543fbc219"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="11" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[    Cedula]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="113" y="7" width="161" height="20" uuid="1894caa0-266c-4050-b4cc-a91608f26d6d"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre_alumno} + ' ' + $F{apellido_alumno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="7" width="100" height="20" uuid="9927f2ff-d83d-4078-aca6-f875c19b7094"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{celular1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="7" width="123" height="20" uuid="2aab3a46-1ba5-4685-bd53-f1502336c853"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mail}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="7" width="100" height="20" uuid="f9ccfb22-26f2-4c83-a20c-6be0ce63d309"/>
+				<textFieldExpression><![CDATA[$F{cedula_alumno}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="1" width="555" height="3" forecolor="#999999" uuid="edc99d4c-b6c8-452f-bcbf-eb1635a43326"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="434" y="34" width="80" height="20" uuid="44cb536b-357f-45c4-8ebb-395ee6705316"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="514" y="34" width="40" height="20" uuid="85c064a7-3f9f-496f-af65-3091e65b4b5a"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
